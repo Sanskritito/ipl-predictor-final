@@ -1,0 +1,29 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - master # or 'main' if your branch is named 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: |
+          # Add your testing command here
+          # Example: pytest
+          echo "No tests defined yet"
