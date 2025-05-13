@@ -2,9 +2,9 @@ name: Python CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   build:
@@ -17,12 +17,9 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.9
+          python-version: "3.9"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install numpy==1.21.0 pandas scikit-learn matplotlib
-
-      - name: Run project script (e.g., main.py or app.py)
-        run: python model.py # change if your entry point has a different name
+          pip install -r ml-backend/requirements.txt
