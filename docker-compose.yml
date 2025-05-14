@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  backend:
+    build:
+      context: ./ml-backend
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ml-backend:/app
+    environment:
+      - ENV_VAR=value # Example environment variable
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    environment:
+      - REACT_APP_ENV=production # Example environment variable for frontend

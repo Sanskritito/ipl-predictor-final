@@ -1,5 +1,17 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+.git 
+node_modules
+.git
+.gitignore
+Dockerfile
+.dockerignore
+README.md
+npm-debug.log
+.env
+__pycache__
+*.pyc
+*.pyo
+*.pyd
 # dependencies
 /node_modules
 
